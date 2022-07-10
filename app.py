@@ -7,7 +7,6 @@ import base64
 from werkzeug.utils import secure_filename
 from models.impainting import test_biharmonic
 import base64
-import glob
 import shutil
  
 app = Flask(__name__)
@@ -90,4 +89,4 @@ def show_result(filename):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')

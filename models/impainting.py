@@ -4,8 +4,6 @@ from skimage.measure import label, regionprops # measure
 from scipy import sparse
 from scipy.sparse.linalg import spsolve
 from scipy.ndimage.filters import laplace
-from skimage import img_as_float
-import os
 from PIL import Image
 
 from scipy import sparse
