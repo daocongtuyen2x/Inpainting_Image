@@ -25,7 +25,8 @@ def allowed_file(filename):
  
 @app.route('/')
 def home():
-    shutil.rmtree('static/uploads')
+    if os.path.exists('static/uploads'):
+        shutil.rmtree('static/uploads')
     os.makedirs('static/uploads')
     return render_template('index.html')
  
