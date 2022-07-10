@@ -1,3 +1,15 @@
 .groupname{
-    color: #19dc9b;
+    color: #038056;
+    font-size: 20px;
+}
+a:link {
+    text-decoration: none;
+  }
+a:hover {
+      text-decoration: underline;
+  }
+
+.note{
+    color: #b8302e;
+    font-size: 15px;
 }

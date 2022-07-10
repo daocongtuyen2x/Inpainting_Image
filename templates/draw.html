@@ -18,7 +18,7 @@
             <!-- <button><a id="download" download="myImage.jpg" href="" onclick="download_img(this);">Download</a></button> -->
             <button onclick="saveMask();" >Submit</button>
             {% if filename %}
-            <button ><a href="{{url_for('show_result', filename=filename)}}">Show Result</a></button>
+            <button ><a href="{{url_for('show_result', filename=filename)}}" id="show-result">Show Result</a></button>
             {% endif %}
         </div>
         {% if filename %}

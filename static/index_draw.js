@@ -82,12 +82,12 @@ function saveMask() {
       processData: false,
       success: function(data) {
         if (data.success) {
-          console.log('Your file was successfully uploaded!');
+          console.log('Success!');
         } else {
-          console.log('There was an error uploading your file!');
+          console.log('There was an error uploading your file, try again!');
         }
       }
     }).done(function() {
-      console.log("Sent");
+      alert('Your image has been processed, click show result!');
     });
   }
