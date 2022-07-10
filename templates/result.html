@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Result of Inpainting Image</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <link href="{{url_for('static', filename = 'result_style.css')}}" rel="stylesheet">   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="header1"><p><h1 align="center">IMP301 project-Image Reconstruction</h1></p></div>
+        <div class="groupname"><p align="center">Group 1:Lê Trung Hiếu, Nguyễn Hoàng Gia Khang, Đào Công Tuyền</p></div>
+
+        <div class="img-container">
+            <img style="width:100%" src="{{url_for('static', filename='uploads/' + filename)}}" alt="Original Image">
+            <p class="image-title">Original image</p>
+        </div>
+        <div class="img-container">
+            <img style="width:100%" src="{{url_for('static', filename='uploads/' + 'mask.jpg')}}" alt="Mask">
+            <p class="image-title">Mask</p>
+        </div>
+        <div class="img-container">
+            <img style="width:100%" src="{{url_for('static', filename='uploads/' + 'result.jpg')}}" alt="Result Image">
+            <p class="image-title">Result of inpainting image</p>
+        </div>
+        <div>
+            <button><a href="{{url_for('home')}}">Process New Image</a></button>
+        </div>
+    </body>
+</html>

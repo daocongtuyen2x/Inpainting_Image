@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static', filename = 'style_draw.css')}}" rel="stylesheet">
+    <title>Draw Mask</title>
+</head>
+<body>
+    <section class="container">
+        <div id="toolbar">
+            <h1>Draw Mask</h1>
+            <label for="stroke">Stroke</label>
+            <input id="stroke" name='stroke' type="color">
+            <label for="lineWidth">Line Width</label>
+            <input id="lineWidth" name='lineWidth' type="number" value="20">
+            <button id="clear">Clear</button>
+            <!-- <button><a id="download" download="myImage.jpg" href="" onclick="download_img(this);">Download</a></button> -->
+            <button onclick="saveMask();" >Submit</button>
+            {% if filename %}
+            <button ><a href="{{url_for('show_result', filename=filename)}}">Show Result</a></button>
+            {% endif %}
+        </div>
+        {% if filename %}
+        <div class="drawing-board">
+            <canvas id="canvas"><img id="myImg" src="{{url_for('static', filename='uploads/' + filename)}}"><div style="display:block; height: 1800px"></canvas>
+            <style>
+                #canvas{
+                    background-image:url("{{url_for('static', filename='uploads/' + filename)}}");
+                    background-size: cover;
+                    display: block;
+                }
+            </style>    
+        </div>
+        {% endif %}
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='index_draw.js')}}"></script>
+</body>
+</html>
